@@ -262,12 +262,12 @@ window.addEventListener("load", () => {
 		preloader.remove();
 
 		const directionActive = localStorage.getItem("direction");
-		if (directionActive !== null && directionActive !== "") {
+		if (directionActive && directionActive !== null && directionActive !== "") {
 			document.querySelector(`input[id="${directionActive}"]`).checked = true;
 		}
 	
 		const categoryActive = localStorage.getItem("category");
-		if (categoryActive !== null && categoryActive !== "") {
+		if (categoryActive && categoryActive !== null && categoryActive !== "") {
 			document.querySelector(`input[id="${categoryActive}"]`).checked = true;
 		}
 		
