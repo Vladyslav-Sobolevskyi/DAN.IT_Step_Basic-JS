@@ -262,10 +262,14 @@ window.addEventListener("load", () => {
 		preloader.remove();
 
 		const directionActive = localStorage.getItem("direction");
+		if (directionActive !== null && directionActive !== "") {
+			document.querySelector(`input[id="${directionActive}"]`).checked = true;
+		}
+
 		const categoryActive = localStorage.getItem("category");
-		
-		document.querySelector(`input[id="${directionActive}"]`).checked = true;
-		document.querySelector(`input[id="${categoryActive}"]`).checked = true;
+		if (categoryActive !== null && categoryActive !== "") {
+			document.querySelector(`input[id="${categoryActive}"]`).checked = true;
+		}
 
 		filteredCard();
 
