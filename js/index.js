@@ -261,6 +261,16 @@ window.addEventListener("load", () => {
 	setTimeout(() => {
 		preloader.remove();
 
+		const directionActive = localStorage.getItem("direction");
+		if (directionActive !== null && directionActive !== "") {
+			document.querySelector(`input[id="${directionActive}"]`).checked = true;
+		}
+	
+		const categoryActive = localStorage.getItem("category");
+		if (categoryActive !== null && categoryActive !== "") {
+			document.querySelector(`input[id="${categoryActive}"]`).checked = true;
+		}
+		
 		filteredCard();
 
 		setTimeout(() => {
@@ -334,15 +344,6 @@ function sortedCard() {
 
 //? Функція фільтрування карток
 function filteredCard() {
-	const directionActive = localStorage.getItem("direction");
-	if (directionActive !== null && directionActive !== "") {
-		document.querySelector(`input[id="${directionActive}"]`).checked = true;
-	}
-
-	const categoryActive = localStorage.getItem("category");
-	if (categoryActive !== null && categoryActive !== "") {
-		document.querySelector(`input[id="${categoryActive}"]`).checked = true;
-	}
 	
 	const radioActiveDirection = filterForm.querySelector(`input[name="direction"]:checked`);
 	const radioActiveCategory = filterForm.querySelector(`input[name="category"]:checked`);
